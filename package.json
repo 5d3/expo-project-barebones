@@ -1,7 +1,7 @@
 {
   "name": "expo-project-barebones",
   "version": "0.0.0",
-  "description": "Hello Expo!",
+  "description": "Barebones project demonstrating a basic React Native & Expo Project",
   "author": null,
   "private": true,
   "main": "main.js",
