@@ -1,9 +1,9 @@
 {
-  "name": "exponent-project-barebones",
-  "description": "Barebones project demonstrating a basic Exponent Project",
-  "slug": "exponent-project-barebones",
+  "name": "expo-project-barebones",
+  "description": "Barebones project demonstrating a basic React Native & Expo Project",
+  "slug": "expo-project-barebones",
   "privacy": "public",
-  "sdkVersion": "14.0.0",
+  "sdkVersion": "15.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#3A4767",
@@ -22,7 +22,7 @@
   },
   "appKey": "main",
   "androidStatusBarColor": "#000000",
-  "androidHideExponentNotificationInShellApp": true,
+  "androidShowExponentNotificationInShellApp": false,
   "packagerOpts": {
     "assetExts": ["ttf", "mp4"]
   },

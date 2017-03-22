@@ -1,4 +1,4 @@
-import Exponent from 'exponent';
+import Expo from 'expo';
 import React from 'react';
 import {
   StyleSheet,
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   }
 });
 
-Exponent.registerRootComponent(App);
+Expo.registerRootComponent(App);
