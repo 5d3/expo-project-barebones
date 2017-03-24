@@ -2,7 +2,9 @@
 
 Barebones project demonstrating a basic React Native & Expo Project.
 
-https://exp.host/@rmotr/expo-project-barebones
+👉 **Try app**: https://exp.host/@rmotr/expo-project-barebones
+
+👉 **Wiki**: https://github.com/rmotr/expo-project-barebones/wiki
 
 ---
 <p align="center">
