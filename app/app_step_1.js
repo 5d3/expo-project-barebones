@@ -1,40 +1,53 @@
 import React from 'react';
 import {
-  StyleSheet,
-  Text,
-  View
+  View, // https://facebook.github.io/react-native/docs/view.html
+  Text, // https://facebook.github.io/react-native/docs/text.html
+  StyleSheet, // https://facebook.github.io/react-native/docs/stylesheet.html
 } from 'react-native';
 
 class App extends React.Component {
+  constructor(){
+    super()
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.textLarge}>Welcome to rmotr's Workshop!</Text>
-        <Text style={styles.textSmall}>(Open up main.js to start working)</Text>
+        <View style={[styles.section, { flex: 1 }]}>
+          <Text style={styles.textLarge}>
+            Welcome to rmotr's Workshop!
+          </Text>
+
+          <Text style={styles.textSmall}>
+            (Open up main.js to start working)
+          </Text>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  logo: {
-    width: 120,
-    height: 120
-  },
   container: {
     flex: 1,
-    backgroundColor: '#242434',
+  },
+  section: {
     alignItems: 'center',
     justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#eee',
+    padding: 10
   },
   textLarge: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#21b274'
+    color: '#2c3e50'
   },
   textSmall: {
-    color: '#21b274'
-  }
+    color: '#34495e',
+    fontStyle: 'italic',
+    paddingBottom: 5
+  },
 });
 
 export default App;
