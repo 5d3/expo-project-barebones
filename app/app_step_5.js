@@ -70,6 +70,9 @@ class App extends React.Component {
             value={this.state.title}
             autoCorrect={false}
             placeholder={'This is a placeholder!'}
+            underlineColorAndroid={'transparent'}
+            keyboardAppearance={'dark'}
+            returnKeyType={"send"}
           />
         </View>
       </View>
