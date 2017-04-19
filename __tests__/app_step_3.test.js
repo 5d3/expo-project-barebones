@@ -94,4 +94,10 @@ describe("<App />", function() {
     expect(wrapper.state().title).toBe('Button was pressed!');
     expect(wrapper.childAt(0).childAt(1).props().children).toBe('Button was pressed!');
   });
+
+  it.only('TEST', () => {
+    console.log(wrapper);
+    console.log(wrapper.text());
+    expect(1).toBe(1);
+  });
 });
