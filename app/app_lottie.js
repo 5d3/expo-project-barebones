@@ -36,6 +36,10 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>
+          Animation example using Lottie
+        </Text>
+
         <View style={styles.animationContainer}>
           <Animation
             style={{
@@ -58,9 +62,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#2c3e50'
+  },
   animationContainer: {
     backgroundColor: '#eee',
-    marginVertical: 20,
+    marginVertical: 50,
     borderRadius: 30
   }
 });
