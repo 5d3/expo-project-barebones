@@ -3,7 +3,7 @@
   "description": "Barebones project demonstrating a basic React Native & Expo Project",
   "slug": "expo-project-barebones",
   "privacy": "public",
-  "sdkVersion": "15.0.0",
+  "sdkVersion": "16.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#3A4767",
