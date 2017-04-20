@@ -18,13 +18,20 @@ Barebones project demonstrating a basic React Native & Expo Project.
 
 
 ## Step by Step
+
+#### React Native components
 1. **Text** component and **StyleSheet** styles
 2. **Image** component & **setState**
 3. **Button** component & **onPress** event handler
 4. Custom button with **TouchableOpacity** component
-5. **TextInput** component, **onChange** event handler & **Dimensions**
-6. **ScrollView** component
-7. Platform specific code (Custom button & Text showing device OS)
+5. Refactor Custom button placing it in an external file
+6. **TextInput** component, **onChange** event handler & **Dimensions**
+7. **ScrollView** component
+8. Platform specific code (Custom button & Text showing device OS)
+
+#### Expo SDK API components
+1. **Lottie** animation component
+2. _coming soon_
 
 
 ---
