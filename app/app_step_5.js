@@ -5,12 +5,9 @@ import {
   StyleSheet, // https://facebook.github.io/react-native/docs/stylesheet.html
   Image, // https://facebook.github.io/react-native/docs/image.html
   Button, // https://facebook.github.io/react-native/docs/button.html
-  TouchableOpacity, // https://facebook.github.io/react-native/docs/touchableopacity.html
-  TextInput, // https://facebook.github.io/react-native/docs/textinput.html
-  Dimensions, // https://facebook.github.io/react-native/docs/dimensions.html
 } from 'react-native';
 
-const fullWidth = Dimensions.get('window').width;
+import CustomButton from '../components/CustomButton';
 
 class App extends React.Component {
   constructor(){
@@ -47,32 +44,15 @@ class App extends React.Component {
 
         <View style={styles.section}>
           <Button
-            onPress={this.onButtonPress.bind(this)}
+            onPress={this.onButtonPress}
             title="Press Me"
             color={'#16a085'}
             accessibilityLabel="See an informative alert"
           />
 
-          <TouchableOpacity
-            style={styles.customButton}
-            onPress={this.onButtonPress.bind(this)}
-          >
-            <Text style={styles.customButtonText}>
-              Our button
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.section}>
-          <TextInput
-            style={styles.textInput}
-            onChangeText={(title) => this.setState({title})}
-            value={this.state.title}
-            autoCorrect={false}
-            placeholder={'This is a placeholder!'}
-            underlineColorAndroid={'transparent'}
-            keyboardAppearance={'dark'}
-            returnKeyType={"send"}
+          <CustomButton
+            onPress={this.onButtonPress}
+            title="Our custom button"
           />
         </View>
       </View>
@@ -105,26 +85,6 @@ const styles = StyleSheet.create({
     color: '#34495e',
     fontStyle: 'italic',
     paddingBottom: 5
-  },
-  customButton: {
-    backgroundColor: '#16a085',
-    borderRadius: 3,
-    margin: 5,
-    padding: 5
-  },
-  customButtonText: {
-    color: '#fff',
-    fontSize: 16
-  },
-  textInput: {
-    height: 30,
-    color: '#333',
-    fontSize: 14,
-    fontWeight: '500',
-    width: fullWidth - 20,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    padding: 5
   },
 });
 

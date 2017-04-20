@@ -9,8 +9,9 @@ import {
   TextInput, // https://facebook.github.io/react-native/docs/textinput.html
   Dimensions, // https://facebook.github.io/react-native/docs/dimensions.html
   ScrollView, // https://facebook.github.io/react-native/docs/scrollview.html
-  Platform, // https://facebook.github.io/react-native/docs/platform-specific-code.html
 } from 'react-native';
+
+import CustomButton from '../components/CustomButton';
 
 const fullWidth = Dimensions.get('window').width;
 
@@ -70,10 +71,6 @@ class App extends React.Component {
           <Text style={styles.textSmall}>
             (Open up main.js to start working)
           </Text>
-
-          <Text style={styles.textSmall}>
-            {`Platform specific text: ${Platform.OS === 'ios' ? 'This is iOS!' : 'This is Android!' }`}
-          </Text>
         </View>
 
         <View style={styles.section}>
@@ -84,14 +81,10 @@ class App extends React.Component {
             accessibilityLabel="See an informative alert"
           />
 
-          <TouchableOpacity
-            style={styles.customButton}
-            onPress={this.onButtonPress.bind(this)}
-          >
-            <Text style={styles.customButtonText}>
-              Our button
-            </Text>
-          </TouchableOpacity>
+          <CustomButton
+            onPress={this.onButtonPress}
+            title="Our custom button"
+          />
         </View>
 
         <View style={styles.section}>
@@ -142,16 +135,6 @@ const styles = StyleSheet.create({
     color: '#34495e',
     fontStyle: 'italic',
     paddingBottom: 5
-  },
-  customButton: {
-    backgroundColor: Platform.OS === 'ios' ? '#2980b9' : '#c0392b',
-    borderRadius: 3,
-    margin: 5,
-    padding: 5
-  },
-  customButtonText: {
-    color: '#fff',
-    fontSize: 16
   },
   textInput: {
     height: 30,

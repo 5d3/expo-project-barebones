@@ -5,8 +5,11 @@ import {
   StyleSheet, // https://facebook.github.io/react-native/docs/stylesheet.html
   Image, // https://facebook.github.io/react-native/docs/image.html
   Button, // https://facebook.github.io/react-native/docs/button.html
+  TouchableOpacity, // https://facebook.github.io/react-native/docs/touchableopacity.html
   TextInput, // https://facebook.github.io/react-native/docs/textinput.html
   Dimensions, // https://facebook.github.io/react-native/docs/dimensions.html
+  ScrollView, // https://facebook.github.io/react-native/docs/scrollview.html
+  Platform, // https://facebook.github.io/react-native/docs/platform-specific-code.html
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
@@ -18,14 +21,39 @@ class App extends React.Component {
     super()
 
     this.state = {
-      title: "Welcome to rmotr's Workshop!"
+      title: "Welcome to rmotr's Workshop!",
+      items: [
+        {'name': 'Item1', 'id': 1},
+        {'name': 'Item2', 'id': 2},
+        {'name': 'Item3', 'id': 3},
+        {'name': 'Item4', 'id': 4},
+        {'name': 'Item5', 'id': 5},
+        {'name': 'Item6', 'id': 6},
+        {'name': 'Item7', 'id': 7},
+        {'name': 'Item8', 'id': 8},
+        {'name': 'Item9', 'id': 9},
+        {'name': 'Item10', 'id': 10},
+        {'name': 'Item11', 'id': 11},
+        {'name': 'Item12', 'id': 12}
+      ]
     };
 
     this.onButtonPress = this.onButtonPress.bind(this)
+    this.renderItems = this.renderItems.bind(this)
   }
 
   onButtonPress(){
     console.log('Pressed')
+  }
+
+  renderItems() {
+    return this.state.items.map(item => {
+      return (
+        <Text key={item.id} style={styles.scrollItem}>
+          {item.name}
+        </Text>
+      );
+    });
   }
 
   render() {
@@ -43,6 +71,10 @@ class App extends React.Component {
 
           <Text style={styles.textSmall}>
             (Open up main.js to start working)
+          </Text>
+
+          <Text style={styles.textSmall}>
+            {`Platform specific text: ${Platform.OS === 'ios' ? 'This is iOS!' : 'This is Android!' }`}
           </Text>
         </View>
 
@@ -71,6 +103,12 @@ class App extends React.Component {
             keyboardAppearance={'dark'}
             returnKeyType={"send"}
           />
+        </View>
+
+        <View style={styles.scrollContainer}>
+          <ScrollView>
+              {this.renderItems()}
+          </ScrollView>
         </View>
       </View>
     );
@@ -111,6 +149,15 @@ const styles = StyleSheet.create({
     width: fullWidth - 20,
     borderColor: '#ddd',
     borderWidth: 1,
+    padding: 5
+  },
+  scrollContainer: {
+    backgroundColor: '#ecf0f1',
+    height: 150
+  },
+  scrollItem: {
+    fontSize: 13,
+    fontWeight: '100',
     padding: 5
   },
 });
