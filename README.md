@@ -36,7 +36,8 @@ Barebones project demonstrating a basic React Native & Expo Project.
 4. **BlurView** component
 5. **Constants** & **Util** components
 6. **DocumentPicker** component
-7. _coming soon_
+7. **MapView** & **Location** components
+8. _coming soon_
 
 ---
 <p align="center">

@@ -1,50 +1,76 @@
 import React from 'react';
 import {
-  View, Text, Button, StyleSheet
+  View, Text, StyleSheet
 } from 'react-native';
 
-// https://docs.expo.io/versions/v16.0.0/sdk/document-picker.html
-import { DocumentPicker } from 'expo';
+// https://docs.expo.io/versions/v16.0.0/sdk/map-view.html
+// https://docs.expo.io/versions/v16.0.0/sdk/location.html
+import { Permissions, MapView, Location } from 'expo';
 
 class App extends React.Component {
   constructor(){
     super()
 
     this.state = {
-      name: null,
-      size: null,
-      uri: null
+      latitude: 37.78825,
+      longitude: -122.4324
     };
 
-    this.getDocument = this.getDocument.bind(this);
+    this.getPosition = this.getPosition.bind(this);
   }
 
-  async getDocument() {
+  componentDidMount() {
+    this.getPosition();
+  }
+
+  async getPosition() {
     const options = {
-      type: '*/*'
+      enableHighAccuracy: true,
     };
 
-    const { type, name, size, uri } = await DocumentPicker.getDocumentAsync(options);
+    const { status } = await Permissions.getAsync(Permissions.LOCATION);
 
-    if (type === 'success') {
-      this.setState({ name, size, uri });
-    };
+    if (status === 'denied') {
+      Alert.alert('Please allow Location permission from your phone configuration');
+    } else {
+      const { status } = await Permissions.askAsync(Permissions.LOCATION);
+
+      if (status === 'granted') {
+        const response = await Location.getCurrentPositionAsync(options);
+
+        this.setState({
+          latitude: response.coords.latitude,
+          longitude: response.coords.longitude,
+        });
+      }
+    }
   }
 
   render() {
-    let { name, size, uri } = this.state;
+    let { latitude, longitude } = this.state;
 
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Expo.DocumentPicker
+          Expo.MapView
         </Text>
 
-        <Button onPress={this.getDocument} title={'getDocumentAsync'} />
-
-        { name && <Text>name: {name}</Text> }
-        { size && <Text>size: {size}</Text> }
-        { uri && <Text>uri: {uri}</Text> }
+        <MapView
+          style={{flex: 1}}
+          region={{
+            latitude: latitude,
+            longitude: longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: latitude,
+              longitude: longitude,
+            }}
+          />
+        </MapView>
       </View>
     );
   }
