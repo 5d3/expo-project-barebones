@@ -46,7 +46,7 @@ class App extends React.Component {
               width: 200,
               height: 200
             }}
-            source={require('../assets/data.json')}
+            source={require('../../assets/data.json')}
             progress={this.state.progress}
             speed={1}
           />
