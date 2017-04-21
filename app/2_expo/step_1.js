@@ -25,7 +25,7 @@ class App extends React.Component {
   playAnimation() {
     Animated.timing(this.state.progress, {
       toValue: 1,
-      duration: 5000,
+      duration: 2000,
     }).start(() => {
       this.setState({ progress: new Animated.Value(0) });
 
@@ -43,8 +43,8 @@ class App extends React.Component {
         <View style={styles.animationContainer}>
           <Animation
             style={{
-              width: 200,
-              height: 200
+              width: 350,
+              height: 150
             }}
             source={require('../../assets/data.json')}
             progress={this.state.progress}
@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
     color: '#2c3e50'
   },
   animationContainer: {
-    backgroundColor: '#eee',
+    backgroundColor: '#162b3b',
     marginVertical: 50,
-    borderRadius: 30
+    borderRadius: 5
   }
 });
 
