@@ -34,7 +34,8 @@ Barebones project demonstrating a basic React Native & Expo Project.
 2. Play a sound  with Audio.**Sound** component
 3. Record a new sound and play it with Audio.**Recording** component
 4. **BlurView** component
-5. _coming soon_
+5. **Constants** & **Util** components
+6. _coming soon_
 
 ---
 <p align="center">
