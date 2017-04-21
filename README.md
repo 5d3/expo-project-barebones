@@ -30,10 +30,11 @@ Barebones project demonstrating a basic React Native & Expo Project.
 8. Platform specific code (Custom button & Text showing device OS)
 
 #### Expo SDK API components
-9. **Lottie** animation component
-10. Play a sound  with Audio.**Sound** component
-11. Record a new sound and play it with Audio.**Recording** component
-12. _coming soon_
+1. **Lottie** animation component
+2. Play a sound  with Audio.**Sound** component
+3. Record a new sound and play it with Audio.**Recording** component
+4. **BlurView** component
+5. _coming soon_
 
 ---
 <p align="center">
