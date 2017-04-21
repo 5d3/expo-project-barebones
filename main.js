@@ -18,5 +18,6 @@ import App from './app/1_react-native/step_1.js';
 // import App from './app/2_expo/step_4.js';
 // import App from './app/2_expo/step_5.js';
 // import App from './app/2_expo/step_6.js';
+// import App from './app/2_expo/step_7.js';
 
 Expo.registerRootComponent(App);
