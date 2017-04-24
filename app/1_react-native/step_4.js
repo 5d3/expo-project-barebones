@@ -13,7 +13,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      title: "Welcome to rmotr's Workshop!"
+      title: "Welcome!"
     };
 
     this.onButtonPress = this.onButtonPress.bind(this)

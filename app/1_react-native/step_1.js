@@ -15,7 +15,7 @@ class App extends React.Component {
       <View style={styles.container}>
         <View style={[styles.section, { flex: 1 }]}>
           <Text style={styles.textLarge}>
-            Welcome to rmotr's Workshop!
+            Welcome!
           </Text>
 
           <Text style={styles.textSmall}>

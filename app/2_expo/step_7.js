@@ -16,14 +16,14 @@ class App extends React.Component {
       longitude: -122.4324
     };
 
-    this.getPosition = this.getPosition.bind(this);
+    this.getPositionPerm = this.getPositionPerm.bind(this);
   }
 
   componentDidMount() {
-    this.getPosition();
+    this.getPositionPerm();
   }
 
-  async getPosition() {
+  async getPositionPerm() {
     const options = {
       enableHighAccuracy: true,
     };

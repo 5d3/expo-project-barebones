@@ -21,7 +21,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      title: "Welcome to rmotr's Workshop!",
+      title: "Welcome!",
       items: [
         {'name': 'Item1', 'id': 1},
         {'name': 'Item2', 'id': 2},
