@@ -66,7 +66,7 @@ describe("<App>", () => {
       });
     });
 
-    describe("<Text>", () => {
+    describe("<Text> 2", () => {
       it('should be a Text component', () => {
         expect(wrapper.childAt(0).childAt(2).type()).toBe(Text);
       });
@@ -81,7 +81,7 @@ describe("<App>", () => {
     });
   });
 
-  describe("<View>", () => {
+  describe("<View> 2", () => {
     it('should have one child', () => {
       expect(wrapper.childAt(1).children()).toHaveLength(1);
     });
