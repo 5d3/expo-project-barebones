@@ -21,6 +21,10 @@ class App extends React.Component {
 
   onButtonPress(){
     console.log('Pressed')
+
+    this.setState({
+      title: "Button was pressed!"
+    });
   }
 
   render() {

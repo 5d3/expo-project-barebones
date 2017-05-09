@@ -5,10 +5,21 @@
   "author": null,
   "private": true,
   "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "verbose": true
+  },
   "dependencies": {
     "@expo/vector-icons": "~4.0.0",
     "expo": "^16.0.0",
     "react": "16.0.0-alpha.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz",
+    "enzyme": "^2.8.1",
+    "jest": "^19.0.2",
+    "jest-expo": "^0.3.1",
+    "react-dom": "^15.5.4"
   }
 }
