@@ -28,6 +28,7 @@ Barebones project demonstrating a basic React Native & Expo Project.
 6. **TextInput** component, **onChange** event handler & **Dimensions**
 7. **ScrollView** component
 8. Platform specific code (Custom button & Text showing device OS)
+9. **AsyncStorage**
 
 #### Expo SDK API components
 1. **Lottie** animation component

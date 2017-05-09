@@ -49,8 +49,8 @@ describe("<App>", () => {
         expect(wrapper.childAt(0).childAt(1).type()).toBe(Text);
       });
 
-      it('should have "Welcome to rmotr\'s workshop!" message', () => {
-        expect(wrapper.childAt(0).childAt(1).props().children).toBe('Welcome to rmotr\'s Workshop!');
+      it('should have "Welcome!" message', () => {
+        expect(wrapper.childAt(0).childAt(1).props().children).toBe('Welcome!');
       });
 
       it('should have fontSize 20', () => {
@@ -92,8 +92,8 @@ describe("<App>", () => {
 
     describe("<Button>", () => {
       it('should change title to "Button was pressed!" when its clicked', () => {
-        expect(wrapper.state().title).toBe('Welcome to rmotr\'s Workshop!');
-        expect(wrapper.childAt(0).childAt(1).props().children).toBe('Welcome to rmotr\'s Workshop!');
+        expect(wrapper.state().title).toBe('Welcome!');
+        expect(wrapper.childAt(0).childAt(1).props().children).toBe('Welcome!');
 
         wrapper.childAt(1).childAt(0).simulate('press');
 
