@@ -5,22 +5,12 @@ import {
 } from 'react-native';
 
 class App extends React.Component {
-  constructor(){
-    super()
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <View style={[styles.section, { flex: 1 }]}>
-          <Text style={styles.textLarge}>
-            Welcome!
-          </Text>
-
-          <Text style={styles.textSmall}>
-            (Open up main.js to start working)
-          </Text>
-        </View>
+        <Text style={styles.title}>
+          AsyncStorage
+        </Text>
       </View>
     );
   }
@@ -29,23 +19,15 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 20,
+    marginTop: 40,
   },
-  section: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-    padding: 10
-  },
-  textLarge: {
+  title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50'
-  },
-  textSmall: {
-    color: '#34495e',
-    fontStyle: 'italic',
-    paddingBottom: 5
+    color: '#2c3e50',
+    marginTop: 20,
+    marginBottom: 10,
   },
 });
 

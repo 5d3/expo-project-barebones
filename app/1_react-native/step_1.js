@@ -6,10 +6,6 @@ import {
 } from 'react-native';
 
 class App extends React.Component {
-  constructor(){
-    super()
-  }
-
   render() {
     return (
       <View style={styles.container}>
