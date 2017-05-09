@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet,
+  View, Text, StyleSheet, Alert
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/map-view.html
