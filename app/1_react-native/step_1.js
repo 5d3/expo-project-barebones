@@ -32,17 +32,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomWidth: 1,
     borderColor: '#eee',
-    padding: 10
+    padding: 10,
   },
   textLarge: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50'
+    color: '#2c3e50',
   },
   textSmall: {
     color: '#34495e',
     fontStyle: 'italic',
-    paddingBottom: 5
+    paddingBottom: 5,
   },
 });
 

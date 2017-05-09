@@ -8,8 +8,8 @@ import { DangerZone } from 'expo';
 const { Lottie: Animation } = DangerZone;
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
       progress: new Animated.Value(0),
@@ -44,7 +44,7 @@ class App extends React.Component {
           <Animation
             style={{
               width: 350,
-              height: 150
+              height: 150,
             }}
             source={require('../../assets/data.json')}
             progress={this.state.progress}
@@ -60,18 +60,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50'
+    color: '#2c3e50',
   },
   animationContainer: {
     backgroundColor: '#162b3b',
     marginVertical: 50,
-    borderRadius: 5
-  }
+    borderRadius: 5,
+  },
 });
 
 export default App;

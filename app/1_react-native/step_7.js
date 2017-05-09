@@ -5,58 +5,55 @@ import {
   StyleSheet, // https://facebook.github.io/react-native/docs/stylesheet.html
   Image, // https://facebook.github.io/react-native/docs/image.html
   Button, // https://facebook.github.io/react-native/docs/button.html
-  TouchableOpacity, // https://facebook.github.io/react-native/docs/touchableopacity.html
   TextInput, // https://facebook.github.io/react-native/docs/textinput.html
   Dimensions, // https://facebook.github.io/react-native/docs/dimensions.html
   ScrollView, // https://facebook.github.io/react-native/docs/scrollview.html
 } from 'react-native';
 
-import CustomButton from '../components/CustomButton';
+import CustomButton from '../../components/CustomButton';
 
 const fullWidth = Dimensions.get('window').width;
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      title: "Welcome!",
+      title: 'Welcome!',
       items: [
-        {'name': 'Item1', 'id': 1},
-        {'name': 'Item2', 'id': 2},
-        {'name': 'Item3', 'id': 3},
-        {'name': 'Item4', 'id': 4},
-        {'name': 'Item5', 'id': 5},
-        {'name': 'Item6', 'id': 6},
-        {'name': 'Item7', 'id': 7},
-        {'name': 'Item8', 'id': 8},
-        {'name': 'Item9', 'id': 9},
-        {'name': 'Item10', 'id': 10},
-        {'name': 'Item11', 'id': 11},
-        {'name': 'Item12', 'id': 12}
-      ]
+        { name: 'Item1', id: 1 },
+        { name: 'Item2', id: 2 },
+        { name: 'Item3', id: 3 },
+        { name: 'Item4', id: 4 },
+        { name: 'Item5', id: 5 },
+        { name: 'Item6', id: 6 },
+        { name: 'Item7', id: 7 },
+        { name: 'Item8', id: 8 },
+        { name: 'Item9', id: 9 },
+        { name: 'Item10', id: 10 },
+        { name: 'Item11', id: 11 },
+        { name: 'Item12', id: 12 },
+      ],
     };
 
-    this.onButtonPress = this.onButtonPress.bind(this)
-    this.renderItems = this.renderItems.bind(this)
+    this.onButtonPress = this.onButtonPress.bind(this);
+    this.renderItems = this.renderItems.bind(this);
   }
 
-  onButtonPress(){
-    console.log('Pressed')
+  onButtonPress() {
+    console.log('Pressed');
 
     this.setState({
-      title: "Button was pressed!"
+      title: 'Button was pressed!',
     });
   }
 
   renderItems() {
-    return this.state.items.map(item => {
-      return (
-        <Text key={item.id} style={styles.scrollItem}>
-          {item.name}
-        </Text>
-      );
-    });
+    return this.state.items.map(item => (
+      <Text key={item.id} style={styles.scrollItem}>
+        {item.name}
+      </Text>
+      ));
   }
 
   render() {
@@ -65,7 +62,7 @@ class App extends React.Component {
         <View style={[styles.section, { flex: 1 }]}>
           <Image
             style={styles.logo}
-            source={{uri: 'http://i.imgur.com/GfAe1bp.png'}}
+            source={{ uri: 'http://i.imgur.com/GfAe1bp.png' }}
           />
 
           <Text style={styles.textLarge}>
@@ -94,19 +91,19 @@ class App extends React.Component {
         <View style={styles.section}>
           <TextInput
             style={styles.textInput}
-            onChangeText={(title) => this.setState({title})}
+            onChangeText={title => this.setState({ title })}
             value={this.state.title}
             autoCorrect={false}
             placeholder={'This is a placeholder!'}
             underlineColorAndroid={'transparent'}
             keyboardAppearance={'dark'}
-            returnKeyType={"send"}
+            returnKeyType={'send'}
           />
         </View>
 
         <View style={styles.scrollContainer}>
           <ScrollView>
-              {this.renderItems()}
+            {this.renderItems()}
           </ScrollView>
         </View>
       </View>
@@ -123,22 +120,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomWidth: 1,
     borderColor: '#eee',
-    padding: 10
+    padding: 10,
   },
   logo: {
     width: 60,
     height: 60,
-    marginBottom: 20
+    marginBottom: 20,
   },
   textLarge: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50'
+    color: '#2c3e50',
   },
   textSmall: {
     color: '#34495e',
     fontStyle: 'italic',
-    paddingBottom: 5
+    paddingBottom: 5,
   },
   textInput: {
     height: 30,
@@ -148,16 +145,16 @@ const styles = StyleSheet.create({
     width: fullWidth - 20,
     borderColor: '#ddd',
     borderWidth: 1,
-    padding: 5
+    padding: 5,
   },
   scrollContainer: {
     backgroundColor: '#ecf0f1',
-    height: 150
+    height: 150,
   },
   scrollItem: {
     fontSize: 13,
     fontWeight: '100',
-    padding: 5
+    padding: 5,
   },
 });
 

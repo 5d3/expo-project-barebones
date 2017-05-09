@@ -1,15 +1,15 @@
 import React from 'react';
 import {
   View, Text, StyleSheet,
-  TouchableOpacity, Image, Button, Alert
+  TouchableOpacity, Image, Button, Alert,
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/audio.html
 import { Audio, Permissions } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
       hasPerm: false,
@@ -17,7 +17,7 @@ class App extends React.Component {
       canRecord: false,
       isDoneRecording: false,
       recording: null,
-      sound: null
+      sound: null,
     };
 
     this.startRecording = this.startRecording.bind(this);
@@ -41,15 +41,15 @@ class App extends React.Component {
     if (status === 'denied') {
       Alert.alert('Please allow Location permission from your phone configuration');
     } else {
-        const { status } = await Permissions.askAsync(Permissions.AUDIO_RECORDING)
+      const { status } = await Permissions.askAsync(Permissions.AUDIO_RECORDING);
 
-        if (status === 'granted') {
-          this.setState({
-            hasPerm: true
-          });
-        } else {
-          Alert.alert('Please allow Location permission from your phone configuration');
-        }
+      if (status === 'granted') {
+        this.setState({
+          hasPerm: true,
+        });
+      } else {
+        Alert.alert('Please allow Location permission from your phone configuration');
+      }
     }
   }
 
@@ -63,7 +63,7 @@ class App extends React.Component {
         ...prepareRecording,
         ...startRecording,
         sound: null,
-        recording
+        recording,
       });
     }
   }
@@ -76,7 +76,7 @@ class App extends React.Component {
     this.setState({
       ...stopRecording,
       isRecording: false,
-      sound
+      sound,
     });
   }
 
@@ -108,14 +108,14 @@ class App extends React.Component {
         </TouchableOpacity>
 
         <Text>
-          {isRecording ? "Recording...... click again to stop" : "Click the image to start recording"}
+          {isRecording ? 'Recording...... click again to stop' : 'Click the image to start recording'}
         </Text>
 
         { sound && isDoneRecording &&
           <Button
             color={'#D7263D'}
             onPress={this.playSound}
-            title={"Play recorded sound!"}
+            title={'Play recorded sound!'}
           />
         }
       </View>
@@ -127,12 +127,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   mic: {
     width: 160,
     height: 160,
-    marginBottom: 20
+    marginBottom: 20,
   },
 });
 

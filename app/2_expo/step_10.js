@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  Text, View, StyleSheet
+  Text, View, StyleSheet,
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/video.html
 import { Video } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
   }
 
   render() {
@@ -36,15 +36,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#2c3e50',
     marginTop: 20,
-    marginBottom: 10
-  }
+    marginBottom: 10,
+  },
 });
 
 export default App;

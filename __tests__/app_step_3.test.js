@@ -12,7 +12,7 @@ afterEach(() => { /* do something */ });
 beforeAll(() => { /* do something */ });
 beforeEach(() => { /* do something */ });
 
-describe("<App>", () => {
+describe('<App>', () => {
   const wrapper = shallow(<App />);
 
   it('should have a View component wrapper', () => {
@@ -28,23 +28,23 @@ describe("<App>", () => {
   });
 
   it('should be both View components', () => {
-    wrapper.children().forEach(child => {
-        expect(child.type()).toBe(View);
+    wrapper.children().forEach((child) => {
+      expect(child.type()).toBe(View);
     });
   });
 
-  describe("<View>", () => {
+  describe('<View>', () => {
     it('should have three children', () => {
       expect(wrapper.childAt(0).children()).toHaveLength(3);
     });
 
-    describe("<Image>", () => {
+    describe('<Image>', () => {
       it('should be an Image component', () => {
         expect(wrapper.childAt(0).childAt(0).type()).toBe(Image);
       });
     });
 
-    describe("<Text>", () => {
+    describe('<Text>', () => {
       it('should be a Text component', () => {
         expect(wrapper.childAt(0).childAt(1).type()).toBe(Text);
       });
@@ -66,7 +66,7 @@ describe("<App>", () => {
       });
     });
 
-    describe("<Text> 2", () => {
+    describe('<Text> 2', () => {
       it('should be a Text component', () => {
         expect(wrapper.childAt(0).childAt(2).type()).toBe(Text);
       });
@@ -81,7 +81,7 @@ describe("<App>", () => {
     });
   });
 
-  describe("<View> 2", () => {
+  describe('<View> 2', () => {
     it('should have one child', () => {
       expect(wrapper.childAt(1).children()).toHaveLength(1);
     });
@@ -90,7 +90,7 @@ describe("<App>", () => {
       expect(wrapper.childAt(1).childAt(0).type()).toBe(Button);
     });
 
-    describe("<Button>", () => {
+    describe('<Button>', () => {
       it('should change title to "Button was pressed!" when its clicked', () => {
         expect(wrapper.state().title).toBe('Welcome!');
         expect(wrapper.childAt(0).childAt(1).props().children).toBe('Welcome!');

@@ -1,20 +1,17 @@
 import React from 'react';
-import {
-  View, Text, StyleSheet,
-  Button,
-} from 'react-native';
+import { View, StyleSheet, Button } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/audio.html
 import { Audio } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
       sound: new Audio.Sound({
-        source: require('../../assets/furrow.mp3')
-      })
+        source: require('../../assets/furrow.mp3'),
+      }),
     };
 
     this.playSound = this.playSound.bind(this);
@@ -55,7 +52,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 });
 

@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#16a085',
     borderRadius: 3,
     margin: 5,
-    padding: 5
+    padding: 5,
   },
   customButtonText: {
     color: '#fff',
-    fontSize: 16
+    fontSize: 16,
   },
 });
 

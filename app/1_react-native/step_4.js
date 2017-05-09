@@ -9,21 +9,21 @@ import {
 } from 'react-native';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      title: "Welcome!"
+      title: 'Welcome!',
     };
 
-    this.onButtonPress = this.onButtonPress.bind(this)
+    this.onButtonPress = this.onButtonPress.bind(this);
   }
 
-  onButtonPress(){
-    console.log('Pressed')
+  onButtonPress() {
+    console.log('Pressed');
 
     this.setState({
-      title: "Button was pressed!"
+      title: 'Button was pressed!',
     });
   }
 
@@ -33,7 +33,7 @@ class App extends React.Component {
         <View style={[styles.section, { flex: 1 }]}>
           <Image
             style={styles.logo}
-            source={{uri: 'http://i.imgur.com/GfAe1bp.png'}}
+            source={{ uri: 'http://i.imgur.com/GfAe1bp.png' }}
           />
 
           <Text style={styles.textLarge}>
@@ -76,32 +76,32 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomWidth: 1,
     borderColor: '#eee',
-    padding: 10
+    padding: 10,
   },
   logo: {
     width: 60,
     height: 60,
-    marginBottom: 20
+    marginBottom: 20,
   },
   textLarge: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50'
+    color: '#2c3e50',
   },
   textSmall: {
     color: '#34495e',
     fontStyle: 'italic',
-    paddingBottom: 5
+    paddingBottom: 5,
   },
   customButton: {
     backgroundColor: '#16a085',
     borderRadius: 3,
     margin: 5,
-    padding: 5
+    padding: 5,
   },
   customButtonText: {
     color: '#fff',
-    fontSize: 16
+    fontSize: 16,
   },
 });
 

@@ -9,26 +9,26 @@ import {
   Dimensions, // https://facebook.github.io/react-native/docs/dimensions.html
 } from 'react-native';
 
-import CustomButton from '../components/CustomButton';
+import CustomButton from '../../components/CustomButton';
 
 const fullWidth = Dimensions.get('window').width;
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      title: "Welcome!"
+      title: 'Welcome!',
     };
 
-    this.onButtonPress = this.onButtonPress.bind(this)
+    this.onButtonPress = this.onButtonPress.bind(this);
   }
 
-  onButtonPress(){
-    console.log('Pressed')
+  onButtonPress() {
+    console.log('Pressed');
 
     this.setState({
-      title: "Button was pressed!"
+      title: 'Button was pressed!',
     });
   }
 
@@ -38,7 +38,7 @@ class App extends React.Component {
         <View style={[styles.section, { flex: 1 }]}>
           <Image
             style={styles.logo}
-            source={{uri: 'http://i.imgur.com/GfAe1bp.png'}}
+            source={{ uri: 'http://i.imgur.com/GfAe1bp.png' }}
           />
 
           <Text style={styles.textLarge}>
@@ -67,13 +67,13 @@ class App extends React.Component {
         <View style={styles.section}>
           <TextInput
             style={styles.textInput}
-            onChangeText={(title) => this.setState({title})}
+            onChangeText={title => this.setState({ title })}
             value={this.state.title}
             autoCorrect={false}
             placeholder={'This is a placeholder!'}
             underlineColorAndroid={'transparent'}
             keyboardAppearance={'dark'}
-            returnKeyType={"send"}
+            returnKeyType={'send'}
           />
         </View>
       </View>
@@ -90,22 +90,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomWidth: 1,
     borderColor: '#eee',
-    padding: 10
+    padding: 10,
   },
   logo: {
     width: 60,
     height: 60,
-    marginBottom: 20
+    marginBottom: 20,
   },
   textLarge: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50'
+    color: '#2c3e50',
   },
   textSmall: {
     color: '#34495e',
     fontStyle: 'italic',
-    paddingBottom: 5
+    paddingBottom: 5,
   },
   textInput: {
     height: 30,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     width: fullWidth - 20,
     borderColor: '#ddd',
     borderWidth: 1,
-    padding: 5
+    padding: 5,
   },
 });
 

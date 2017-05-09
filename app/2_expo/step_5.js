@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   View, Text, StyleSheet,
-  Platform, Button
+  Platform, Button,
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/constants.html
@@ -9,11 +9,11 @@ import {
 import { Constants, Util } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      locale: null
+      locale: null,
     };
 
     this.getLocale = this.getLocale.bind(this);
@@ -22,7 +22,7 @@ class App extends React.Component {
   async getLocale() {
     const locale = await Util.getCurrentLocaleAsync();
 
-    this.setState({locale});
+    this.setState({ locale });
   }
 
   reload() {
@@ -32,7 +32,7 @@ class App extends React.Component {
   render() {
     const {
       appOwnership, expoVersion, deviceName,
-      deviceYearClass, isDevice, platform
+      deviceYearClass, isDevice, platform,
     } = Constants;
 
     const { locale } = this.state;
@@ -68,14 +68,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#2c3e50',
     marginTop: 20,
-    marginBottom: 10
+    marginBottom: 10,
   },
 });
 

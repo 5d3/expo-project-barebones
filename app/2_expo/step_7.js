@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet
+  View, Text, StyleSheet,
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/map-view.html
@@ -8,12 +8,12 @@ import {
 import { Permissions, MapView, Location } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
       latitude: 37.78825,
-      longitude: -122.4324
+      longitude: -122.4324,
     };
 
     this.getPositionPerm = this.getPositionPerm.bind(this);
@@ -47,7 +47,7 @@ class App extends React.Component {
   }
 
   render() {
-    let { latitude, longitude } = this.state;
+    const { latitude, longitude } = this.state;
 
     return (
       <View style={styles.container}>
@@ -56,18 +56,18 @@ class App extends React.Component {
         </Text>
 
         <MapView
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           region={{
-            latitude: latitude,
-            longitude: longitude,
+            latitude,
+            longitude,
             latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
+            longitudeDelta: 0.0421,
           }}
         >
           <MapView.Marker
             coordinate={{
-              latitude: latitude,
-              longitude: longitude,
+              latitude,
+              longitude,
             }}
           />
         </MapView>
@@ -80,14 +80,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#2c3e50',
     marginTop: 20,
-    marginBottom: 10
+    marginBottom: 10,
   },
 });
 

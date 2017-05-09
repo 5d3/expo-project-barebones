@@ -1,18 +1,18 @@
 import React from 'react';
 import {
   View, Button, Image,
-  StatusBar, StyleSheet
+  StatusBar, StyleSheet,
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/blur-view.html
 import { BlurView } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      showBlur: false
+      showBlur: false,
     };
 
     this.toggleBlur = this.toggleBlur.bind(this);
@@ -20,12 +20,12 @@ class App extends React.Component {
 
   toggleBlur() {
     this.setState({
-      showBlur: !this.state.showBlur
+      showBlur: !this.state.showBlur,
     });
   }
 
   render() {
-    let { showBlur } = this.state;
+    const { showBlur } = this.state;
 
     return (
       <View style={styles.container}>
@@ -57,17 +57,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    paddingTop: 50
+    paddingTop: 50,
   },
   blurContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   image: {
     width: 200,
-    height: 200
-  }
+    height: 200,
+  },
 });
 
 export default App;

@@ -1,21 +1,21 @@
 import React from 'react';
 import {
   View, Text, Button,
-  Image, StyleSheet
+  Image, StyleSheet,
 } from 'react-native';
 
 // https://docs.expo.io/versions/v16.0.0/sdk/imagepicker.html
 import { ImagePicker, Permissions } from 'expo';
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
       hasPerm: true,
       cancelled: true,
       fileSize: null,
-      uri: null
+      uri: null,
     };
 
     this.getCameraPerm = this.getCameraPerm.bind(this);
@@ -37,7 +37,7 @@ class App extends React.Component {
 
       if (status === 'granted') {
         this.setState({
-          hasPerm: true
+          hasPerm: true,
         });
       } else {
         Alert.alert('Please allow Camera permission from your phone configuration');
@@ -48,31 +48,31 @@ class App extends React.Component {
   async openCamera() {
     const options = {
       allowsEditing: true,
-      aspect: [4, 3]
+      aspect: [4, 3],
     };
 
     const { cancelled, fileSize, uri } = await ImagePicker.launchCameraAsync(options);
 
     if (!cancelled) {
       this.setState({ cancelled, fileSize, uri });
-    };
+    }
   }
 
   async openImageLibrary() {
     const options = {
       allowsEditing: true,
-      aspect: [4, 3]
+      aspect: [4, 3],
     };
 
     const { cancelled, fileSize, uri } = await ImagePicker.launchImageLibraryAsync(options);
 
     if (!cancelled) {
       this.setState({ cancelled, fileSize, uri });
-    };
+    }
   }
 
   render() {
-    let { cancelled, fileSize, uri } = this.state;
+    const { cancelled, fileSize, uri } = this.state;
 
     return (
       <View style={styles.container}>
@@ -86,9 +86,9 @@ class App extends React.Component {
 
         { fileSize && <Text>size: {fileSize}</Text> }
         { uri && <Image
-            source={{uri}}
-            style={styles.image}
-          />
+          source={{ uri }}
+          style={styles.image}
+        />
         }
       </View>
     );
@@ -99,19 +99,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#2c3e50',
     marginTop: 20,
-    marginBottom: 10
+    marginBottom: 10,
   },
   image: {
     width: 200,
-    height: 200
-  }
+    height: 200,
+  },
 });
 
 export default App;
