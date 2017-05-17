@@ -19,7 +19,6 @@ class App extends React.Component {
       title: '',
       description: '',
       delay: '',
-      notification: null,
     };
 
     this.registerForPushNotificationsAsync = this.registerForPushNotificationsAsync.bind(this);
