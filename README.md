@@ -41,6 +41,7 @@ Barebones project demonstrating a basic React Native & Expo Project.
 8. **ImagePicker** component to access camera and image library
 9. **WebBrowser** & **WebView** components
 10. **Video** component
+11. **Push Notifications**
 
 ---
 <p align="center">
